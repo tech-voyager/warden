@@ -28,7 +28,7 @@ client.on('messageCreate', (message) => {
   if (message.author.bot) return;
   const command = message.content;
   if (command === "!help") {
-    message.send(message.channel_id, "I'm here!");
+    message.send("I'm here!");
   }
 });
 client.connect();
