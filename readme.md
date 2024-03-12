@@ -13,7 +13,7 @@ npm install warden
 ### Getting Started
 
 ```javascript
-const { Client } = require('warden');
+const { Client } = require('@tech-voyager/warden');
 
 const client = new Client({
   token: 'YOUR_DISCORD_BOT_TOKEN',
@@ -31,6 +31,7 @@ client.on('messageCreate', (message) => {
     message.send(message.channel_id, "I'm here!");
   }
 });
+client.connect();
 ```
 
 ### Features
