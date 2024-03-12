@@ -20,14 +20,15 @@ const client = new Client({
   intents: 131071,
 });
 
-client.on('READY', () => {
-  console.log(`${client.user.username} is logged in`);
+client.on('ready', (d) => {
+  console.log(`${d.user.username} is logged in`);
 });
 
-client.on('MESSAGE_CREATE', (message) => {
+client.on('messageCreate', (message) => {
+  if (message.author.bot) return;
   const command = message.content;
   if (command === "!help") {
-    client.send(message.channel_id, "I'm here!");
+    message.send(message.channel_id, "I'm here!");
   }
 });
 ```
